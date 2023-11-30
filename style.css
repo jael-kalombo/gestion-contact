@@ -1,6 +1,14 @@
-.boite{
-    display: grid;
-    width: 40%;
-    color: rgb(110, 110, 254);
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,600&family=Fraunces:opsz,wght@9..144,200&family=Poppins:ital,wght@0,700;1,700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.label {
+    display: flex;
+flex-direction: column;
+width: 50%;
 
 }

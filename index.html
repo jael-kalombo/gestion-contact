@@ -1,63 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Document</title>
-
 </head>
+
 <body>
-    <div>
-        <h1>Répertoire des contacts</h1>
-    </div>
-    
-    <div class="bloc">
-        <p>formulaire de contact </p>
-        <p>liste de contact</p>
+   <div id="centrale">
+       <div class="repertoire_contact">
+        <p>Répectoire des contacts</p>
+       </div>
+      <div class="formulaire_listecontact">
+       <div class="formulaire">
+           <p>formulaire de contact</p> 
+       </div>
+           <form id="formulairecentral">
+               <div class="label" id="imput">
+                   <label for="Prénom">Prénom</label>
+                   <input type="text"  id="Prénom" name="Prénom" required>
+                   <label for="Nom"> Nom</label>
+                   <input type="text" id="Nom" name="Nom" required>
+                   <label for="Télephone">Télephone </label>
+                   <input type="Télephone" id="Télephone" name="Télephone" required>
+                   <label for="Groupe">Groupe</label>
+                   <input type="text" id="Groupe" name="Groupe" required>
+                   <label for="Email">Email</label>
+                   <input type="Email" id="Email" name="Email" required>
+                   <label for="Bio">Bio</label>
+                   <textarea name="" id="" cols="30" rows="4"></textarea>
+                   
+                   <div class="button"> 
+                       <button onclick="Créer" class="">Créer</button>
+                       <button onclick="Rénit" class="">Rénit</button>
+                   </div>
 
-        <div class="boite">
-            <label for="">prenom</label>
-            <input type="text">
-        </div>
+               </div>
+           </form> 
 
-        <div class="boite">
-            <label for="">nom</label>
-            <input type="text">
+       <div class="liste_contact">
+           <p>liste des contacts</p>
+       </div>
+   
         </div>
-
-        <div class="boite">
-            <label for="">telephone</label>
-            <input type="text">    
-        </div>
-
-        <div class="boite">
-            <label for="">groupe</label>
-            <input type="text">
-        </div>
-
-        <div class="boite">
-            <label for="">email</label>
-            <input type="text">
-        </div>
+    </div>          
         
-        <div class="boite">
-            <label for="">bio</label>
-            <input type="text">
-        </div>
-
-        <textarea name="" id="" cols="30" rows="10">deposez votre photo ici</textarea>
-
-        <div class="boutton">
-            <button class="blue">créer</button>
-
-            <button class="red">rénit</button>
-        </div>
-
-    
-    </div>
-
-    
 </body>
+
 </html>
