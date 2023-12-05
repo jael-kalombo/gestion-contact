@@ -1,4 +1,4 @@
-<!DOCTYPE html>gjkklmlk;kmlm
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,44 +12,87 @@
 </head>
 
 <body>
-   <div id="centrale">
-       <div class="repertoire_contact">
-        <p>Répectoire des contacts</p>
-       </div>
-      <div class="formulaire_listecontact">
-       <div class="formulaire">
-           <p>formulaire de contact</p> 
-       </div>
-           <form id="formulairecentral">
-               <div class="label" id="imput">
-                   <label for="Prénom">Prénom</label>
-                   <input type="text"  id="Prénom" name="Prénom" required>
-                   <label for="Nom"> Nom</label>
-                   <input type="text" id="Nom" name="Nom" required>
-                   <label for="Télephone">Télephone </label>
-                   <input type="Télephone" id="Télephone" name="Télephone" required>
-                   <label for="Groupe">Groupe</label>
-                   <input type="text" id="Groupe" name="Groupe" required>
-                   <label for="Email">Email</label>
-                   <input type="Email" id="Email" name="Email" required>
-                   <label for="Bio">Bio</label>
-                   <textarea name="" id="" cols="30" rows="4"></textarea>
-                   
-                   <div class="button"> 
-                       <button onclick="Créer" class="">Créer</button>
-                       <button onclick="Rénit" class="">Rénit</button>
-                   </div>
+    <header>
+        <h1>
+            Répectoire des conctats
+        </h1>
+    </header>
 
-               </div>
-           </form> 
 
-       <div class="liste_contact">
-           <p>liste des contacts</p>
-       </div>
-   
-        </div>
-    </div>          
+<div class="contenaire">
+
+
+
+    <section class="droit">
         
+        <form action="corp_formulaire" class="label">
+
+            <legend>Formulaire de contact</legend>
+
+           <div class="imput">
+            
+
+            
+                <label for="Prénomimput">Prénom</label>
+                <input type="text" name="Prénom" id="Prénomimput" required>
+            
+            
+                <label for="Nomimput"> Nom</label>
+                <input type="text" name="Nom" id="Nomimput" required>
+            
+            
+                <label for="Télephoneimput">Télephone </label>
+                <input type="Télephone" name="Télephone" id="Télephoneimput" required>
+            
+            
+                <label for="Groupeimput">Groupe</label>
+                <input type="text" name="Groupe" id="Groupeimput" required>
+            
+            
+                <label for="Emailimput">Email</label>
+                <input type="Email" name="Email" id="Emailimput" required>
+            
+            
+                <label for="Bioimput">Bio</label>
+                <textarea name="Bio" id="Bioimput" cols="30" rows="4"></textarea>
+            
+            
+           </div>
+
+           <div class="photo">
+            <label for="file">Déposez la photo ici</label>
+            <input type="file" name="file" id="file">
+           </div>
+
+            
+            <div class="button">
+                <input type="submit" value="Créer" class="bleu">
+                <input type="reset" value="Rénit" class="red">
+            </div>
+
+
+
+
+        </form>
+
+
+    </section>
+
+
+
+    <section class="gauche">
+        <div class="Listedesconctats">
+            <legend>Liste des conctats</legend>
+        </div>
+    </section>
+
+
+
+</div>
+
+
+
+
 </body>
 
 </html>
