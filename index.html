@@ -13,85 +13,82 @@
 
 <body>
     <header>
-        <h1>
+        <legend>
             Répectoire des conctats
-        </h1>
+        </legend>
+            
     </header>
 
 
-<div class="contenaire">
+    <div class="contenaire">
 
 
 
-    <section class="droit">
-        
-        <form action="corp_formulaire" class="label">
+        <section class="droit">
 
-            <legend>Formulaire de contact</legend>
+            <form action="corp_formulaire" id="label">
 
-           <div class="imput">
-            
+                <legend>Formulaire de contact</legend>
 
-            
-                <label for="Prénomimput">Prénom</label>
-                <input type="text" name="Prénom" id="Prénomimput" required>
-            
-            
-                <label for="Nomimput"> Nom</label>
-                <input type="text" name="Nom" id="Nomimput" required>
-            
-            
-                <label for="Télephoneimput">Télephone </label>
-                <input type="Télephone" name="Télephone" id="Télephoneimput" required>
-            
-            
-                <label for="Groupeimput">Groupe</label>
-                <input type="text" name="Groupe" id="Groupeimput" required>
-            
-            
-                <label for="Emailimput">Email</label>
-                <input type="Email" name="Email" id="Emailimput" required>
-            
-            
-                <label for="Bioimput">Bio</label>
-                <textarea name="Bio" id="Bioimput" cols="30" rows="4"></textarea>
-            
-            
-           </div>
+                <div class="Formulaire">
 
-           <div class="photo">
-            <label for="file">Déposez la photo ici</label>
-            <input type="file" name="file" id="file">
-           </div>
 
-            
-            <div class="button">
-                <input type="submit" value="Créer" class="bleu">
-                <input type="reset" value="Rénit" class="red">
+
+                    <label for="Prénomimput">Prénom</label>
+                    <input type="text" name="Prénom" id="Prénomimput" required>
+                    <span id="spanPrénom"></span>
+
+                    <label for="Nomimput"> Nom</label>
+                    <input type="text" name="Nom" id="Nomimput" required>
+                    <span id="spanNom"></span>
+
+                    <label for="Télephoneimput">Télephone </label>
+                    <input type="text" name="Télephone" id="Télephoneimput" required>
+                    <span id="spanTélephone"></span>
+
+                    <label for="Groupeimput">Groupe</label>
+                    <input type="text" name="Groupe" id="Groupeimput" required>
+                    <span id="spanGroupe"></span>
+
+                    <label for="Emailimput">Email</label>
+                    <input type="text" name="Email" id="Emailimput" required>
+                    <span id="spanEmail"></span>
+
+                    <label for="Bioimput">Bio</label>
+                    <textarea name="Bio" id="Bioimput" cols="30" rows="4"></textarea>
+                    <span id="spanBio"></span>
+
+
+                </div>
+
+                <div class="textarea">
+                    <label for="input-file" id="drop-area"></label>deposer la photo <br> ici</label> <input type="file">
+
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Créer" class="bleu">
+                    <input type="reset" value="Rénit" class="red">
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+
+        <section class="gauche">
+            <div class="Listedesconctats">
+                <legend>Liste des conctats</legend>
             </div>
+        </section>
 
 
 
-
-        </form>
-
-
-    </section>
-
-
-
-    <section class="gauche">
-        <div class="Listedesconctats">
-            <legend>Liste des conctats</legend>
-        </div>
-    </section>
-
-
-
-</div>
-
-
-
+    </div>
+    <script src="script.js"></script>
 
 </body>
 
