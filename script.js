@@ -85,7 +85,8 @@ Groupeimput.addEventListener("blur" , function (e) {
 });
 
 Emailimput.addEventListener("blur" , function (e) {
-    let condition = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    let condition = /^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+    // new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
     const Emailimputvalue = Emailimput.value.trim();
 
     if (condition.test(Emailimputvalue)) {
