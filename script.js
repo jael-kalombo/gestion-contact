@@ -8,7 +8,8 @@ const Groupeimput = document.querySelector('#Groupeimput');
 const Bioimput = document.querySelector('#Bioimput');
 let spanPrénom = document.querySelector('#spanPrénom');
 let spanEmail = document.querySelector('#spanEmail')
-let spanBio = document.querySelector("#spanBio")
+let spanBio = document.querySelector("#spanBio");
+let textarea = document.querySelector('#textarea');
 
 // evenement
 
@@ -103,10 +104,6 @@ Emailimput.addEventListener("blur" , function (e) {
     
 });
 
-
-
-
-
 Télephoneimput.addEventListener("blur", function (e) {
     let condition = /^[081|082|083|084|085|089|090|091|097|098|099|]{10}$/;
     const Télephoneimputvalue = Télephoneimput.value.trim();
@@ -139,7 +136,75 @@ Bioimput.addEventListener('blur',  function(e){
     }
         
    
-})
+});
+
+
+// function drop(){
+//     textarea;
+//     e.preventDefault();
+    
+// }
+
+// let dropArea = document.getElementById('dropArea');
+// const photoInput = document.getElementById('photo');
+// let photo;
+
+// let image;
+
+// function loadImage(file) {
+//   const reader = new FileReader();  
+//   reader.onload = function (e) {  
+//     image = document.createElement('img');
+//     image.src = e.target.result;  
+//     image.alt = "Image Preview";  
+//     dropArea.innerHTML = '';  
+//     dropArea.appendChild(image);
+//   };  
+//   reader.readAsDataURL(file);
+// }
+
+// photoInput.addEventListener('change', function (event) {
+//   photo = event.target.files[0];
+//   if (photo) {
+//     loadImage(photo);
+//   }
+// });  
+
+// dropArea.addEventListener('dragover', function (event) {
+//   event.preventDefault();
+//   dropArea.style.border = '2px solid blue';
+// });  
+
+// dropArea.addEventListener('dragleave', function () {
+//   dropArea.style.border = '2px dashed #ccc';
+// });  
+
+// dropArea.addEventListener('drop', function (event) {
+//   event.preventDefault();
+//   photo = event.dataTransfer.files[0];
+//   if (photo) {
+//     loadImage(photo);
+//   }
+//   dropArea.style.border = '2px dashed #ccc';
+// });
+
+// dropArea.addEventListener('click', function () {
+//   photoInput.click();
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
