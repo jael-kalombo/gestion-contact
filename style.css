@@ -24,7 +24,8 @@ header legend {
     justify-content: center;
     gap: 2%;
     width: 100%;
-    height: 100%;       
+    height: 100%; 
+    font-family: inherit;
 }
 
 ul {
@@ -62,15 +63,17 @@ form .Formulaire {
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     align-self: center; 
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-left: 35px;
     color: #0880D6;
     font-weight: 100px;
+    
 }
 .Formulaire input{
     border: 2px solid #c4c4c4;
-    width: 480px;
+    width:90%;
     height: 35px;
     border-radius: 4px;
     font-family: inherit;
@@ -78,7 +81,7 @@ form .Formulaire {
 }
 .Formulaire textarea{
     border: 2px solid #c4c4c4;
-    width: 480px;
+    width: 90%;
     height: 35px;
     border-radius: 4px;
     font-family: inherit;
@@ -87,9 +90,18 @@ form .Formulaire {
 }
 #file {
     height: 100px;
+    margin: 15px 0px 15px 0px;
+    height: 150px;
+    padding-top: 1px;
+    border: dashed 1px  #c4c4c4;
+    width: 90%;
+    height: 35px;
+    border-radius: 4px;
+    font-size: 12px;  
+    height: 115px;
 }
 .bleu {
-    margin-top: 15px;
+    margin-top: 10px;
     background-color: #0880D6;
     color: #fff;
     border: 1px solid #0880D6;
@@ -100,7 +112,7 @@ form .Formulaire {
     margin: 10px;    
 }
 .red {
-    margin-top: 15px;
+    margin-top: 10px;
     background-color:  #FF3838;
     color:#fff;
     border: 1px solid #FF3838;
@@ -111,25 +123,7 @@ form .Formulaire {
     margin: 10px;
     
 }
-.textarea{
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    margin: 15px 0px 15px 0px;
-    height: 150px;
-    padding-top: 1px;
-    border: dashed 1px  #c4c4c4;
-    width :100; 
-    width: 480px;
-    height: 35px;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 12px;  
-    height: 115px;
-}
-.textarea input{
-    opacity: 0;
-}
+
 @media screen and (max-width: 700px) {
     .contenaire {
         display: block;
