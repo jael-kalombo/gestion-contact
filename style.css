@@ -21,17 +21,24 @@ header legend {
 .contenaire{
     margin-top: 30px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     gap: 2%;
     width: 100%;
     height: 100%;       
 }
+
+ul {
+list-style: none;
+display: flex;
+}
+
 .droit {
-    width: 30%;    
+    width: 40%; 
+    border: 2px solid #c4c4c4;   
 } 
 .gauche {
-     width: 60%;          
+     width: 50%;
+     border: 2px solid #c4c4c4;
 }
  legend {
     background-color: #0880D6;
@@ -76,6 +83,9 @@ form .Formulaire {
     border-radius: 4px;
     font-family: inherit;
     font-size: 12px;  
+    height: 100px;
+}
+#file {
     height: 100px;
 }
 .bleu {

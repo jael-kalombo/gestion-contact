@@ -1,17 +1,48 @@
 // recuperation des elements
-const form = document.querySelector("#label");
-const Prénomimput = document.querySelector("#Prénomimput ");
-const Nomimput = document.querySelector("#Nomimput");
-const Télephoneimput = document.querySelector("#Télephoneimput");
-const Emailimput = document.querySelector('#Emailimput');
-const Groupeimput = document.querySelector('#Groupeimput');
-const Bioimput = document.querySelector('#Bioimput');
-let spanPrénom = document.querySelector('#spanPrénom');
-let spanEmail = document.querySelector('#spanEmail')
-let spanBio = document.querySelector("#spanBio");
-let textarea = document.querySelector('#textarea');
+const form = document.getElementById("label");
+const Prénomimput = document.getElementById("Prénomimput");
+const Nomimput = document.getElementById("Nomimput");
+const Télephoneimput = document.getElementById("Télephoneimput");
+const Emailimput = document.getElementById('Emailimput');
+const Groupeimput = document.getElementById('Groupeimput');
+const Bioimput = document.getElementById('Bioimput');
+let spanPrénom = document.getElementById('spanPrénom');
+let spanEmail = document.getElementById('spanEmail')
+let spanBio = document.getElementById("spanBio");
+let textarea = document.getElementById('textarea');
+let imageInput = document.getElementById('file')
+let button = document.getElementById('ButtonAdd');
+let listeContact = document.querySelector('.Listedesconctats ul');
+let imgUrl;
+
+// tableau des contacts
+
+let tabContact = [];
 
 // evenement
+imageInput.addEventListener("change", (e) => {
+    e.preventDefault();
+    let img = e.target.files[0];
+    let imageView = () => {
+        let newImg = document.querySelector(`#labelfile img`);
+        newImg ? newImg.remove() : newImg;
+        let image = document.createElement("img");
+        const reader = new FileReader();
+        reader.readAsDataURL(img);
+        reader.onload = () => {
+            document.querySelector('.file span').style.display = 'none';
+            document.querySelector('.file label').appendChild(image);
+            imgUrl = reader.result;
+            image.src = imgUrl;
+        }
+    }
+});
+
+form.addEventListener( 'submit', (event) => {
+    event.preventDefault();
+    addContact()
+})
+
 
 Prénomimput.addEventListener("blur" , function (e) {
     let condition = /^[a-zA-Z_]{3,50}/;
@@ -138,99 +169,181 @@ Bioimput.addEventListener('blur',  function(e){
    
 });
 
+// functions
 
-// function drop(){
-//     textarea;
-//     e.preventDefault();
+// ajout contact
+
+function addContact () {
+    let newContact = {
+        prenom: Prénomimput.value,
+        nom: Nomimput.value,
+        telephone: Télephoneimput.value,
+        groupe: Groupeimput.value,
+        email:Emailimput.value,
+        bio:Bioimput.value,
+        image:imgUrl
+
+
+    } ; 
+    tabContact.push(newContact);
+
+    Prénomimput.value ='';
+    Nomimput.value = '';
+    Télephoneimput.value = '';
+    Groupeimput.value = '';
+    Emailimput.value = '';
+    Bioimput.value = '';
+    affichageContact()
+}
+
+// affichage contact
+
+function affichageContact () {
+console.log(tabContact);
+
+    for (let contact of tabContact) {
+        let liProfil = document.createElement('li');
+        let imgProfil = document.createElement('img');
+        let descProfil = document.createElement('div');
+        let pNames = document.createElement('p');
+        let pNumero = document.createElement('p');
+        let pBio = document.createElement('p');
+
+        imgProfil.src = contact.image;
+        pNames.textContent = `${contact.prenom} ${contact.nom} ${contact.groupe}`;
+        pNumero.textContent = contact.telephone;
+        pBio.textContent =contact.bio;
+
+        descProfil.appendChild(pNames);
+        descProfil.appendChild(pNumero);
+        descProfil.appendChild(pBio);
+
+        liProfil.appendChild(imgProfil);
+        liProfil.appendChild(descProfil);
+
+        listeContact.appendChild(liProfil)
+    }
     
-// }
+}
 
-// let dropArea = document.getElementById('dropArea');
-// const photoInput = document.getElementById('photo');
-// let photo;
+// document.addEventListener('DOMContentLoaded', function () {
+ 
+//   var form = document.getElementById('label');  
 
-// let image;
+// //   button.addEventListener('click', function (event) {
+// //     event.preventDefault(); 
 
-// function loadImage(file) {
-//   const reader = new FileReader();  
-//   reader.onload = function (e) {  
-//     image = document.createElement('img');
-//     image.src = e.target.result;  
-//     image.alt = "Image Preview";  
-//     dropArea.innerHTML = '';  
-//     dropArea.appendChild(image);
-//   };  
-//   reader.readAsDataURL(file);
-// }
+// //     // var nom = document.getElementById('nom').value;
+// //     // var postnom = document.getElementById('postnom').value;
+// //     // var telephone = document.getElementById('telephone').value;
+// //     // var groupe = document.getElementById('groupe').value;  
+// //     // var email = document.getElementById('email').value;
+// //     // var bio = document.getElementById('bio').value;
 
-// photoInput.addEventListener('change', function (event) {
-//   photo = event.target.files[0];
-//   if (photo) {
-//     loadImage(photo);
-//   }
-// });  
+// //     // var li = document.createElement('div');
+// //     // li.classList.add('contact-item'); 
+// //     // const Prénomimput = document.getElementById("#Prénomimput ").value;
+// //     // const Nomimput = document.getElementById("#Nomimput").value;
+// //     // const Télephoneimput = document.getElementById("#Télephoneimput").value;
+// //     // const Emailimput = document.getElementById('#Emailimput').value;
+// //     // const Groupeimput = document.getElementById('#Groupeimput').value;
+// //     // const Bioimput = document.getElementById('#Bioimput').value;
+// // console.log('salut')
+// //   })
+// // });
 
-// dropArea.addEventListener('dragover', function (event) {
-//   event.preventDefault();
-//   dropArea.style.border = '2px solid blue';
-// });  
+// // function drop(){
+// //     textarea;
+// //     e.preventDefault();
+    
+// // }
 
-// dropArea.addEventListener('dragleave', function () {
-//   dropArea.style.border = '2px dashed #ccc';
-// });  
+// // let dropArea = document.getElementById('dropArea');
+// // const photoInput = document.getElementById('photo');
+// // let photo;
 
-// dropArea.addEventListener('drop', function (event) {
-//   event.preventDefault();
-//   photo = event.dataTransfer.files[0];
-//   if (photo) {
-//     loadImage(photo);
-//   }
-//   dropArea.style.border = '2px dashed #ccc';
-// });
+// // let image;
 
-// dropArea.addEventListener('click', function () {
-//   photoInput.click();
-// });
+// // function loadImage(file) {
+// //   const reader = new FileReader();  
+// //   reader.onload = function (e) {  
+// //     image = document.createElement('img');
+// //     image.src = e.target.result;  
+// //     image.alt = "Image Preview";  
+// //     dropArea.innerHTML = '';  
+// //     dropArea.appendChild(image);
+// //   };  
+// //   reader.readAsDataURL(file);
+// // }
 
+// // photoInput.addEventListener('change', function (event) {
+// //   photo = event.target.files[0];
+// //   if (photo) {
+// //     loadImage(photo);
+// //   }
+// // });  
 
+// // dropArea.addEventListener('dragover', function (event) {
+// //   event.preventDefault();
+// //   dropArea.style.border = '2px solid blue';
+// // });  
 
+// // dropArea.addEventListener('dragleave', function () {
+// //   dropArea.style.border = '2px dashed #ccc';
+// // });  
 
+// // dropArea.addEventListener('drop', function (event) {
+// //   event.preventDefault();
+// //   photo = event.dataTransfer.files[0];
+// //   if (photo) {
+// //     loadImage(photo);
+// //   }
+// //   dropArea.style.border = '2px dashed #ccc';
+// // });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// form.addEventListener('click', e => {
-//     e.preventDefault();
-
-//     form_verify();
-// })
-
-// fonction
-
-    // obtenir le valeur de imput 
-//     const Prénomimputvalue = Prénomimput.Value.trim();
-//     const NomimputValue = Nomimput.value.Value.trim();
-//     const Télephoneimputvalue = Télephoneimput.value.trim();
-//     const Emailimputvalue = Emailimputvalue.Value.trim();
-
-
-//     //usermane verify
-//     if (Prénomimputvalue === "") {
-//         let message = "compléte le champs";
-//         setError(Prénomimput, message);
-//     }
+// // dropArea.addEventListener('click', function () {
+// //   photoInput.click();
+// // });
 
 
-// function setError(elements, message) {
-//     const formFormulaire = elements.parentElement
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // form.addEventListener('click', e => {
+// //     e.preventDefault();
+
+// //     form_verify();
+// // })
+
+// // fonction
+
+//     // obtenir le valeur de imput 
+// //     const Prénomimputvalue = Prénomimput.Value.trim();
+// //     const NomimputValue = Nomimput.value.Value.trim();
+// //     const Télephoneimputvalue = Télephoneimput.value.trim();
+// //     const Emailimputvalue = Emailimputvalue.Value.trim();
+
+
+// //     //usermane verify
+// //     if (Prénomimputvalue === "") {
+// //         let message = "compléte le champs";
+// //         setError(Prénomimput, message);
+// //     }
+
+
+// // function setError(elements, message) {
+// //     const formFormulaire = elements.parentElement
+// // }
