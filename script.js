@@ -226,32 +226,6 @@ console.log(tabContact);
     
 }
 
-// document.addEventListener('DOMContentLoaded', function () {
- 
-//   var form = document.getElementById('label');  
-
-// //   button.addEventListener('click', function (event) {
-// //     event.preventDefault(); 
-
-// //     // var nom = document.getElementById('nom').value;
-// //     // var postnom = document.getElementById('postnom').value;
-// //     // var telephone = document.getElementById('telephone').value;
-// //     // var groupe = document.getElementById('groupe').value;  
-// //     // var email = document.getElementById('email').value;
-// //     // var bio = document.getElementById('bio').value;
-
-// //     // var li = document.createElement('div');
-// //     // li.classList.add('contact-item'); 
-// //     // const Prénomimput = document.getElementById("#Prénomimput ").value;
-// //     // const Nomimput = document.getElementById("#Nomimput").value;
-// //     // const Télephoneimput = document.getElementById("#Télephoneimput").value;
-// //     // const Emailimput = document.getElementById('#Emailimput').value;
-// //     // const Groupeimput = document.getElementById('#Groupeimput').value;
-// //     // const Bioimput = document.getElementById('#Bioimput').value;
-// // console.log('salut')
-// //   })
-// // });
-
 // // function drop(){
 // //     textarea;
 // //     e.preventDefault();
@@ -322,28 +296,3 @@ console.log(tabContact);
 
 
 
-// // form.addEventListener('click', e => {
-// //     e.preventDefault();
-
-// //     form_verify();
-// // })
-
-// // fonction
-
-//     // obtenir le valeur de imput 
-// //     const Prénomimputvalue = Prénomimput.Value.trim();
-// //     const NomimputValue = Nomimput.value.Value.trim();
-// //     const Télephoneimputvalue = Télephoneimput.value.trim();
-// //     const Emailimputvalue = Emailimputvalue.Value.trim();
-
-
-// //     //usermane verify
-// //     if (Prénomimputvalue === "") {
-// //         let message = "compléte le champs";
-// //         setError(Prénomimput, message);
-// //     }
-
-
-// // function setError(elements, message) {
-// //     const formFormulaire = elements.parentElement
-// // }
